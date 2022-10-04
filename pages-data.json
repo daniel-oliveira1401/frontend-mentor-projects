@@ -1,0 +1,32 @@
+[
+	{
+		"name": "Home",
+		"description": "placeholder description here.",
+		"path": "home",
+		"isProject": false
+	},
+	{
+		"name": "project 2",
+		"description": "placeholder description here.",
+		"path": "project_2",
+		"isProject": true
+	},
+	{
+		"name": "project 3",
+		"description": "placeholder description here.",
+		"path": "project_3",
+		"isProject": true
+	},
+	{
+		"name": "project 4",
+		"description": "placeholder description here.",
+		"path": "project_4",
+		"isProject": true
+	},
+	{
+		"name": "Info",
+		"description": "info page",
+		"path": "info",
+		"isProject": false
+	}
+]

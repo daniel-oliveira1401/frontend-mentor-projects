@@ -6,6 +6,12 @@
 		"isProject": false
 	},
 	{
+		"name": "Projects",
+		"description": "placeholder description here.",
+		"path": "projects",
+		"isProject": false
+	},
+	{
 		"name": "project 2",
 		"description": "placeholder description here.",
 		"path": "project_2",

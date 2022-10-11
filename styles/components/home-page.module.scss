@@ -1,0 +1,70 @@
+@import "../globals/utilities";
+@import "../globals/variables";
+
+.home {
+	&__hero {
+		width: fit-content;
+		margin-left: auto;
+		margin-top: 90px;
+		margin-right: 16px;
+		h2 {
+			color: $dark-green;
+			font-weight: 400;
+			font-size: 24px;
+			text-align: center;
+		}
+
+		img {
+			max-width: 200px;
+			border: 3px solid $dark-green;
+			border-radius: 500px;
+		}
+	}
+
+	&__cta {
+		margin-top: 144px;
+		margin-left: 48px;
+		button {
+			cursor: pointer;
+			user-select: none;
+			padding-inline: 24px;
+			padding-block: 14px;
+			font-size: 20px;
+			background-color: transparent;
+			border: none;
+			border-left: 2px solid $dark-green;
+			border-bottom: 2px solid $dark-green;
+			position: relative;
+			$bg-size: 20px;
+			border-top-right-radius: 1rem;
+
+			&::before,
+			&::after {
+				content: "";
+				transition: all 350ms ease-in;
+				position: absolute;
+				height: $bg-size;
+				width: $bg-size;
+				background-color: $dark-green;
+				bottom: calc(0% - $bg-size/2);
+				left: calc(0% - $bg-size/2);
+				border-radius: 50%;
+			}
+
+			&:hover {
+				&::before {
+					bottom: calc(100% - $bg-size/2);
+				}
+
+				&::after {
+					left: calc(100% - $bg-size/2);
+				}
+			}
+
+			&:active {
+				background-color: $dark-green;
+				color: $white;
+			}
+		}
+	}
+}

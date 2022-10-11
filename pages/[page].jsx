@@ -1,10 +1,8 @@
 import pagesData from "../pages-data.json";
 import Link from "next/link";
-import { useEffect, useState } from "react";
-// import HomePage from "../components/HomePage/HomePage";
-// import InfoPage from "../components/InfoPage/InfoPage";
-// import ProjectsPage from "../components/ProjectsPage/ProjectsPage";
 import dynamic from "next/dynamic";
+
+import { useEffect } from "react";
 
 const Layout = dynamic(() => import("../components/Layout/Layout"));
 const HomePage = dynamic(() => import("../components/HomePage/HomePage"));
@@ -12,10 +10,11 @@ const InfoPage = dynamic(() => import("../components/InfoPage/InfoPage"));
 const ProjectsPage = dynamic(() =>
 	import("../components/ProjectsPage/ProjectsPage")
 );
+const ProjectPage = dynamic(() =>
+	import("../components/ProjectPage/ProjectPage")
+);
 
 export default function Page(props) {
-	console.log(props);
-
 	let pageComponent;
 
 	switch (props.page.path) {
@@ -27,45 +26,30 @@ export default function Page(props) {
 			pageComponent = <InfoPage></InfoPage>;
 			break;
 
-		default:
+		case "projects":
 			pageComponent = <ProjectsPage project={props.page}></ProjectsPage>;
+			break;
+
+		//default is ProjectPage
+		default:
+			pageComponent = <ProjectPage></ProjectPage>;
 			break;
 	}
 
+	function hideTransition() {
+		let layout = document.querySelector("[data-layout]");
+		layout.classList.remove("transition");
+	}
+
 	useEffect(() => {
-		console.log("changed");
-		document.querySelector("p.myP").style.backgroundColor = "blue";
+		hideTransition();
+	});
+
+	useEffect(() => {
+		// console.log("changed");
 	}, [props]);
 
-	let navbar = (
-		<nav className="normal">
-			{pagesData.map((page) => {
-				return (
-					<Link key={page.path} href={page.path}>
-						<a
-							onClick={() => {
-								console.log("changing");
-								document.querySelector("p.myP").style.backgroundColor = "red";
-							}}
-						>
-							{page.name}
-						</a>
-					</Link>
-				);
-			})}
-		</nav>
-	);
-
-	return (
-		<div>
-			{navbar}
-			<h1>👋 🌎 {props.page.name}</h1>
-			{pageComponent}
-			<p style={{ backgroundColor: "red" }} className={"myP"}>
-				animated
-			</p>
-		</div>
-	);
+	return <Layout>{pageComponent}</Layout>;
 }
 
 export async function getStaticPaths() {
@@ -84,7 +68,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-	console.log(params.page);
+	// console.log(params.page);
 
 	let page = pagesData.find((p) => p.path == params.page);
 

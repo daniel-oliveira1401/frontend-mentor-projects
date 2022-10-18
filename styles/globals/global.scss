@@ -13,20 +13,25 @@ html {
 	min-height: 100vh;
 	background-color: $white;
 	overflow-x: hidden;
+	scroll-behavior: smooth;
+}
+
+img {
+	display: block;
 }
 
 [data-layout].transition {
 	[class*="bg_circle"] {
 		&[data-index="0"] {
-			left: -130px;
+			left: -130px !important;
 		}
 
 		&[data-index="1"] {
-			right: -120px;
+			right: -120px !important;
 		}
 	}
 
 	[data-spinner] {
-		opacity: 1;
+		opacity: 1 !important;
 	}
 }

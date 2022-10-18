@@ -5,9 +5,11 @@ export default function HomePage() {
 	return (
 		<div className={styles.home}>
 			<section className={styles.home__hero}>
-				<h2>Some of my</h2>
-				<img src="frontend-mentor.png" alt="frontend mentor image" />
-				<h2>projects</h2>
+				<div className={styles.container}>
+					<h2>Some of my</h2>
+					<img src="frontend-mentor.png" alt="frontend mentor image" />
+					<h2>projects</h2>
+				</div>
 			</section>
 			<div className={styles.home__cta}>
 				<Link href="/projects">

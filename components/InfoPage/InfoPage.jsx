@@ -1,3 +1,3 @@
 export default function InfoPage() {
-	return <h1>Info page here hehe</h1>;
+	return <h1>Under construction 👷‍♂️</h1>;
 }

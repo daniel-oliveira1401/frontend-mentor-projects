@@ -14,6 +14,12 @@ const ProjectPage = dynamic(() =>
 	import("../components/ProjectPage/ProjectPage")
 );
 
+function getProjectsData() {
+	return pagesData.filter((page) => {
+		return page.isProject == true;
+	});
+}
+
 export default function Page(props) {
 	let pageComponent;
 
@@ -27,12 +33,14 @@ export default function Page(props) {
 			break;
 
 		case "projects":
-			pageComponent = <ProjectsPage project={props.page}></ProjectsPage>;
+			pageComponent = (
+				<ProjectsPage projectsData={getProjectsData()}></ProjectsPage>
+			);
 			break;
 
 		//default is ProjectPage
 		default:
-			pageComponent = <ProjectPage></ProjectPage>;
+			pageComponent = <ProjectPage project={props.page}></ProjectPage>;
 			break;
 	}
 
@@ -49,7 +57,7 @@ export default function Page(props) {
 		// console.log("changed");
 	}, [props]);
 
-	return <Layout>{pageComponent}</Layout>;
+	return <Layout isProject={props.page.isProject}>{pageComponent}</Layout>;
 }
 
 export async function getStaticPaths() {

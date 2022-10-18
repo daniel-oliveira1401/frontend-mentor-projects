@@ -2,28 +2,59 @@
 @import "../globals/variables";
 
 .home {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
 	&__hero {
-		width: fit-content;
+		// width: fit-content;
 		margin-left: auto;
 		margin-top: 90px;
 		margin-right: 16px;
-		h2 {
-			color: $dark-green;
-			font-weight: 400;
-			font-size: 24px;
-			text-align: center;
+		margin-inline: auto;
+		padding-left: $bg-circle-sm/2;
+		@include breakpoint-up(medium) {
+			padding-left: $bg-circle-md/2;
 		}
+		.container {
+			width: clamp(200px, 80%, 700px);
+			margin-inline: auto;
+			h2 {
+				padding-inline: 1rem;
+				color: $dark-green;
+				font-weight: 400;
+				font-size: 6vw;
+				text-align: center;
+				@include breakpoint-up(medium) {
+					font-size: 56px;
+					&:first-child {
+						text-align: right;
+					}
 
-		img {
-			max-width: 200px;
-			border: 3px solid $dark-green;
-			border-radius: 500px;
+					&:last-child {
+						text-align: left;
+					}
+				}
+			}
+
+			img {
+				margin-inline: auto;
+				width: 100%;
+				border-radius: 500px;
+				border: 5px solid $dark-green;
+				@include breakpoint-up(medium) {
+					border: 10px solid $dark-green;
+				}
+				@include breakpoint-up(large) {
+				}
+			}
 		}
 	}
 
 	&__cta {
-		margin-top: 144px;
-		margin-left: 48px;
+		// padding-right: $bg-circle-sm/2;
+		padding-top: 5rem;
+		margin-top: auto;
+		margin-bottom: 9rem;
 		button {
 			cursor: pointer;
 			user-select: none;
@@ -65,6 +96,11 @@
 				background-color: $dark-green;
 				color: $white;
 			}
+		}
+
+		width: fit-content;
+		margin-inline: auto;
+		@include breakpoint-up(medium) {
 		}
 	}
 }

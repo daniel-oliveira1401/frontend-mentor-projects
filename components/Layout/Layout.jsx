@@ -6,10 +6,9 @@ import { useRouter } from "next/router";
 let navItems = ["home", "projects", "info"];
 
 export default function Layout(props) {
-	let [currentActive, setCurrentActive] = useState("home");
-	let [navBgIndex, setNavBgIndex] = useState(0);
-
 	let router = useRouter();
+	let [currentActive, setCurrentActive] = useState(getCurrentActive());
+	let [navBgIndex, setNavBgIndex] = useState(getNavBgIndex());
 
 	function showTransition() {
 		let layout = document.querySelector("[data-layout]");
@@ -26,12 +25,35 @@ export default function Layout(props) {
 		return item == navItems[navBgIndex];
 	}
 
+	function getCurrentActive() {
+		let path = router.asPath.replace("/", "");
+		if (props.isProject) {
+			return "projects";
+		} else {
+			return path;
+		}
+	}
+
+	function getNavBgIndex() {
+		let path = router.asPath.replace("/", "");
+		if (props.isProject) {
+			return navItems.indexOf("projects");
+		} else {
+			return navItems.indexOf(path);
+		}
+	}
+
 	useEffect(() => {
 		let path = router.asPath.replace("/", "");
 
 		if (path != currentActive) {
-			setCurrentActive(path);
-			setNavBgIndex(navItems.indexOf(path));
+			if (!props.isProject) {
+				setCurrentActive(path);
+				setNavBgIndex(navItems.indexOf(path));
+			} else {
+				setCurrentActive("projects");
+				setNavBgIndex(navItems.indexOf("projects"));
+			}
 		}
 	}, [props]);
 

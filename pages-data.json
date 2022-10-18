@@ -12,21 +12,33 @@
 		"isProject": false
 	},
 	{
-		"name": "project 2",
+		"name": "Advice Generator App",
 		"description": "placeholder description here.",
-		"path": "project_2",
+		"path": "advice-generator-app",
 		"isProject": true
 	},
 	{
-		"name": "project 3",
+		"name": "Interactive Card Details Form",
 		"description": "placeholder description here.",
-		"path": "project_3",
+		"path": "interactive-card-details-form",
 		"isProject": true
 	},
 	{
-		"name": "project 4",
+		"name": "Profile Card Component",
 		"description": "placeholder description here.",
-		"path": "project_4",
+		"path": "profile-card-component",
+		"isProject": true
+	},
+	{
+		"name": "Tip Calculator App",
+		"description": "placeholder description here.",
+		"path": "tip-calculator-app",
+		"isProject": true
+	},
+	{
+		"name": "Chat App CSS Illustration",
+		"description": "placeholder description here.",
+		"path": "chat-app-css-illustration",
 		"isProject": true
 	},
 	{

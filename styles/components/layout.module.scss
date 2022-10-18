@@ -15,12 +15,36 @@
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
-	overflow-x: hidden;
+	overflow: hidden;
 	position: relative;
 	isolation: isolate;
 
 	&[data-current-page="home"] {
 		overflow: hidden;
+		.bg_circle {
+			$size: $bg-circle-sm;
+			$size-desktop: $bg-circle-lg;
+			&[data-index="0"] {
+				top: 100px;
+				// left: -140px;
+				left: -$size/2;
+
+				@include breakpoint-up(medium) {
+					left: -$size-desktop/2;
+					top: calc(50vh - $size-desktop/2);
+				}
+			}
+
+			&[data-index="1"] {
+				top: calc(100% - $size/2);
+				right: -$size/2;
+
+				@include breakpoint-up(medium) {
+					top: calc(100vh - $size-desktop/2);
+					right: -$size-desktop/2;
+				}
+			}
+		}
 	}
 
 	&__header {
@@ -69,6 +93,8 @@
 		overflow-x: hidden;
 		flex-grow: 1;
 		z-index: 1;
+		display: flex;
+		flex-direction: column;
 	}
 
 	.nav {
@@ -108,16 +134,21 @@
 	}
 
 	.spinner_overlay {
+		height: 100%;
 		z-index: 2;
 		position: absolute;
 		background-color: $white;
 		inset: 0;
-		display: grid;
-		place-items: center;
+
 		pointer-events: none;
 		opacity: 0;
 		transition: opacity 200ms ease-in;
+
 		.spinner {
+			position: absolute;
+			top: 50vh;
+			left: 50%;
+			translate: -50% -50%;
 			$size: 40px;
 			height: $size;
 			width: $size;
@@ -125,6 +156,51 @@
 			border-top-color: transparent;
 			border-radius: 50%;
 			animation: 1s linear spin infinite;
+			@include breakpoint-up(medium) {
+				left: 70%;
+			}
+		}
+	}
+
+	.bg_circle {
+		$size: $bg-circle-sm;
+		$size-desktop: $bg-circle-lg;
+
+		width: $size;
+		height: $size;
+
+		@include breakpoint-up(medium) {
+			width: $size-desktop;
+			height: $size-desktop;
+		}
+
+		background-color: $dark-green;
+		border-radius: 50%;
+
+		position: absolute;
+		z-index: 3;
+
+		transition: all 200ms ease-in;
+
+		&[data-index="0"] {
+			top: 100px;
+			// left: -140px;
+			left: -$size * 0.9;
+
+			@include breakpoint-up(medium) {
+				left: -$size-desktop * 0.95;
+				top: calc(50vh - $size-desktop/2);
+			}
+		}
+
+		&[data-index="1"] {
+			top: calc(100% - $size * 0.4);
+			right: -$size * 0.9;
+
+			@include breakpoint-up(medium) {
+				top: calc(100vh - $size-desktop/2);
+				right: -$size-desktop * 0.95;
+			}
 		}
 	}
 }
@@ -136,47 +212,6 @@
 
 	to {
 		rotate: 360deg;
-	}
-}
-
-.bg_circle {
-	$size: 270px;
-	$size-desktop: 600px;
-
-	width: $size;
-	height: $size;
-
-	@include breakpoint-up(medium) {
-		width: $size-desktop;
-		height: $size-desktop;
-	}
-
-	background-color: $dark-green;
-	border-radius: 50%;
-
-	position: absolute;
-	z-index: 3;
-
-	transition: all 200ms ease-in;
-
-	&[data-index="0"] {
-		top: 100px;
-		left: -140px;
-
-		@include breakpoint-up(medium) {
-			left: -$size-desktop/2;
-			top: calc(50vh - $size-desktop/2);
-		}
-	}
-
-	&[data-index="1"] {
-		top: 500px;
-		right: -$size/2;
-
-		@include breakpoint-up(medium) {
-			top: calc(100vh - $size-desktop/2);
-			right: -$size-desktop/2;
-		}
 	}
 }
 

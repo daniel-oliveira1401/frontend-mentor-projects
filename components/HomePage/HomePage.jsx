@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function HomePage() {
 	return (
-		<div className={styles.home}>
+		<div data-home className={styles.home}>
 			<section className={styles.home__hero}>
 				<div className={styles.container}>
 					<h2>Some of my</h2>

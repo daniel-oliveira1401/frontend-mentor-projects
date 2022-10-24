@@ -10,11 +10,6 @@ export default function Layout(props) {
 	let [currentActive, setCurrentActive] = useState(getCurrentActive());
 	let [navBgIndex, setNavBgIndex] = useState(getNavBgIndex());
 
-	function showTransition() {
-		let layout = document.querySelector("[data-layout]");
-		layout.classList.add("transition");
-	}
-
 	function handleNavClick(index) {
 		setCurrentActive(navItems[index]);
 		setNavBgIndex(index);

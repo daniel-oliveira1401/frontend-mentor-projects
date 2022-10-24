@@ -13,10 +13,8 @@
 		justify-content: space-evenly;
 	}
 	padding-block: 2rem;
-	animation-name: fade-in;
-	animation-duration: 500ms;
-	animation-timing-function: ease-in;
-	animation-fill-mode: forwards;
+	opacity: 0;
+	transition: all $transition-dur ease-in;
 }
 
 .projectCard {
@@ -30,7 +28,7 @@
 	flex-direction: column;
 	align-items: center;
 	padding-top: 0;
-	transition: translate 150ms ease-in;
+	transition: all 150ms ease-in;
 	margin-bottom: 1rem;
 
 	$horizontal-offset: 5rem;
@@ -47,6 +45,17 @@
 		margin-right: $horizontal-offset;
 	}
 
+	&:focus {
+		&:nth-child(even) {
+			transform: translateX(-30%);
+			opacity: 0.1;
+		}
+		&:nth-child(odd) {
+			transform: translateX(30%);
+			opacity: 0.1;
+		}
+	}
+
 	@include breakpoint-up(large) {
 		margin-left: 0px;
 		margin-right: 0px;
@@ -59,6 +68,11 @@
 		&:nth-child(even) {
 			margin-left: 0px;
 			margin-right: 0px;
+		}
+
+		&:focus {
+			transform: translateY(-25%) translateX(0%) !important;
+			opacity: 0.1;
 		}
 	}
 

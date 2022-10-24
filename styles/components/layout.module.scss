@@ -46,6 +46,53 @@
 				}
 			}
 		}
+
+		[data-home] {
+			opacity: 1;
+			animation-name: fade-in;
+			animation-duration: $transition-dur;
+			animation-timing-function: ease-in;
+		}
+	}
+
+	&[data-current-page="projects"] {
+		.layout__content {
+			overflow: visible;
+		}
+		.layout__content > section {
+			overflow: visible;
+
+			margin-top: -$nav-bg-size/3;
+			@include breakpoint-up(medium) {
+				margin-top: -$nav-bg-size-desktop/3;
+			}
+		}
+		.bg_circle {
+			$size: $bg-circle-sm;
+			$size-desktop: $bg-circle-lg;
+			&[data-index="0"] {
+				left: -$size * 0.95;
+
+				@include breakpoint-up(medium) {
+					left: -$size-desktop * 0.95;
+				}
+			}
+		}
+		[data-projects] {
+			opacity: 1;
+			animation-name: fade-in;
+			animation-duration: $transition-dur;
+			animation-timing-function: ease-in;
+		}
+	}
+
+	&[data-current-page="info"] {
+		[data-info] {
+			opacity: 1;
+			animation-name: fade-in;
+			animation-duration: $transition-dur;
+			animation-timing-function: ease-in;
+		}
 	}
 
 	&__header {

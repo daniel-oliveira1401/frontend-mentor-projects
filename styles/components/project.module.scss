@@ -1,0 +1,71 @@
+@import "../globals/utilities";
+@import "../globals/variables";
+
+.project {
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+	opacity: 0;
+	transition: all $transition-dur ease-in;
+	opacity: 1;
+	animation-name: fade-in;
+	animation-duration: $transition-dur;
+	animation-timing-function: ease-in;
+	&__header {
+		display: flex;
+		background-color: $dark-green;
+		align-items: center;
+		padding-block: 1rem;
+		justify-content: space-between;
+		svg > * {
+			color: $white;
+		}
+		.nav_arrow__left,
+		.nav_arrow__right {
+			color: $white;
+			padding-inline: 1rem;
+			padding-block: 0.5rem;
+			cursor: pointer;
+			border-radius: 1rem;
+
+			&[data-disabled="true"] {
+				pointer-events: none;
+				opacity: 0.3;
+			}
+
+			&:hover,
+			&:active {
+				background-color: $white;
+				svg > * {
+					color: $dark-green;
+				}
+			}
+		}
+	}
+
+	&__name {
+		color: $white;
+		font-size: 18px;
+	}
+
+	&__container {
+		flex-grow: 1;
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		padding: 1rem;
+		iframe {
+			border: 5px solid $dark-green;
+			flex-grow: 1;
+			display: block;
+			border-radius: 5px;
+		}
+	}
+
+	&__overlay {
+		position: absolute;
+		inset: 0;
+		display: grid;
+		place-items: center;
+	}
+}

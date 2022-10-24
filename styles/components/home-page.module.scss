@@ -5,10 +5,8 @@
 	display: flex;
 	flex-direction: column;
 	flex-grow: 1;
-	animation-name: fade-in;
-	animation-duration: 500ms;
-	animation-timing-function: ease-in;
-	animation-fill-mode: forwards;
+	opacity: 0;
+	transition: all $transition-dur ease-in;
 	&__hero {
 		// width: fit-content;
 		margin-left: auto;

@@ -10,8 +10,9 @@ export default function ProjectsPage(props) {
 		return (
 			<Link key={projectData.path} href={projectData.path}>
 				<div
+					tabIndex={0}
 					onClick={() => {
-						document.querySelector("html").scrollTo(0, 0);
+						// document.querySelector("html").scrollTo(0, 0);
 					}}
 					className={styles.projectCard}
 				>
@@ -31,5 +32,9 @@ export default function ProjectsPage(props) {
 		);
 	});
 
-	return <section className={styles.projects}>{projectsCards}</section>;
+	return (
+		<section data-projects className={styles.projects}>
+			{projectsCards}
+		</section>
+	);
 }

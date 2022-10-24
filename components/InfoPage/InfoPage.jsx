@@ -1,3 +1,3 @@
 export default function InfoPage() {
-	return <h1>Under construction 👷‍♂️</h1>;
+	return <div data-info>Under construction 👷‍♂️</div>;
 }

@@ -12,11 +12,6 @@ export default function ProjectsPage(props) {
 				<div
 					onClick={() => {
 						document.querySelector("html").scrollTo(0, 0);
-						setTimeout(() => {
-							document
-								.querySelector("[data-layout]")
-								.classList.add("transition");
-						}, 100);
 					}}
 					className={styles.projectCard}
 				>

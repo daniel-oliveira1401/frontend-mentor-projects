@@ -50,7 +50,7 @@ export default function Page(props) {
 	}
 
 	useEffect(() => {
-		hideTransition();
+		// hideTransition();
 	});
 
 	useEffect(() => {

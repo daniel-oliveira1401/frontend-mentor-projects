@@ -21,6 +21,7 @@
 
 	&[data-current-page="home"] {
 		overflow: hidden;
+		height: 100vh;
 		.bg_circle {
 			$size: $bg-circle-sm;
 			$size-desktop: $bg-circle-lg;

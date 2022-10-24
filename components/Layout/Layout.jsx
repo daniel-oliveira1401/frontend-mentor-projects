@@ -18,7 +18,7 @@ export default function Layout(props) {
 	function handleNavClick(index) {
 		setCurrentActive(navItems[index]);
 		setNavBgIndex(index);
-		showTransition();
+		// showTransition();
 	}
 
 	function isActiveItem(item) {

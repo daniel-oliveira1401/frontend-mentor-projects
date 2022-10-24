@@ -13,6 +13,10 @@
 		justify-content: space-evenly;
 	}
 	padding-block: 2rem;
+	animation-name: fade-in;
+	animation-duration: 500ms;
+	animation-timing-function: ease-in;
+	animation-fill-mode: forwards;
 }
 
 .projectCard {

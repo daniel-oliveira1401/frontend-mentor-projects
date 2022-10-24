@@ -13,15 +13,7 @@ export default function HomePage() {
 			</section>
 			<div className={styles.home__cta}>
 				<Link href="/projects">
-					<button
-						onClick={() => {
-							document
-								.querySelector("[data-layout]")
-								.classList.add("transition");
-						}}
-					>
-						Check them out
-					</button>
+					<button>Check them out</button>
 				</Link>
 			</div>
 		</div>

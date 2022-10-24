@@ -5,6 +5,10 @@
 	display: flex;
 	flex-direction: column;
 	flex-grow: 1;
+	animation-name: fade-in;
+	animation-duration: 500ms;
+	animation-timing-function: ease-in;
+	animation-fill-mode: forwards;
 	&__hero {
 		// width: fit-content;
 		margin-left: auto;
@@ -52,9 +56,7 @@
 
 	&__cta {
 		// padding-right: $bg-circle-sm/2;
-		padding-top: 5rem;
-		margin-top: auto;
-		margin-bottom: 9rem;
+		margin-block: auto;
 		button {
 			cursor: pointer;
 			user-select: none;

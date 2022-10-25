@@ -10,13 +10,7 @@ export default function ProjectsPage(props) {
 	projectsCards = props.projectsData.map((projectData) => {
 		return (
 			<Link key={projectData.path} href={projectData.path}>
-				<div
-					tabIndex={0}
-					onClick={() => {
-						// document.querySelector("html").scrollTo(0, 0);
-					}}
-					className={styles.projectCard}
-				>
+				<div tabIndex={0} className={styles.projectCard}>
 					<div className={styles.projectCard__img}>
 						<img
 							// src={`./projects/previews/${projectData.path}.jpeg`}
@@ -36,6 +30,18 @@ export default function ProjectsPage(props) {
 	return (
 		<section data-projects className={styles.projects}>
 			<Head>
+				<meta
+					name="description"
+					content="Come check out my Frontend Mentor projects ✨"
+					key={"desc"}
+				/>
+				<meta property="og:title" content={"Frontend Mentor Projects"} />
+
+				<meta property="og:image" content="/og_img_home.jpg" />
+				<meta
+					property="og:description"
+					content="Come check out my Frontend Mentor projects ✨"
+				/>
 				<title>Projects</title>
 			</Head>
 			{projectsCards}

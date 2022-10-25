@@ -1,6 +1,6 @@
 import styles from "../../styles/components/layout.module.scss";
 import Link from "next/link";
-import { createContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
 let navItems = ["home", "projects", "info"];

@@ -6,6 +6,13 @@ export default function HomePage() {
 	return (
 		<div data-home className={styles.home}>
 			<Head>
+				<meta
+					name="description"
+					content="Come check out my Frontend Mentor projects ✨"
+					key={"desc"}
+				/>
+				<meta property="og:title" content={"Frontend Mentor Projects"} />
+
 				<meta property="og:image" content="/og_img_home.jpg" />
 				<meta
 					property="og:description"

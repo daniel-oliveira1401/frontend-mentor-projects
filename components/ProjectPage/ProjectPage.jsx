@@ -7,11 +7,6 @@ import Link from "next/link";
 import Head from "next/head";
 
 export default function ProjectPage(props) {
-	useEffect(() => {
-		console.log("loaded");
-		// hideOverlay();
-	}, [props]);
-
 	function getProjectsPaths() {
 		let p = [];
 
@@ -49,10 +44,16 @@ export default function ProjectPage(props) {
 		<section className={s.project}>
 			<Head>
 				<meta
+					name="description"
+					content={props.project.description}
+					key={"desc"}
+				/>
+				<meta property="og:title" content={props.project.name} />
+				<meta property="og:description" content={props.project.description} />
+				<meta
 					property="og:image"
 					content={`/projects/previews/preview-${props.project.path}.jpg`}
 				/>
-				<meta property="og:description" content={props.project.description} />
 				<title>{props.project.name}</title>
 			</Head>
 			<header className={s.project__header}>

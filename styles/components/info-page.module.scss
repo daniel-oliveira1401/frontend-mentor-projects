@@ -1,6 +1,90 @@
+@import "../globals/utilities";
+@import "../globals/variables";
 .info {
+	opacity: 0;
+	transition: all $transition-dur ease-in;
 	$nav-bg-size: 80px;
 	$nav-bg-size-desktop: 100px;
 
 	padding-top: $nav-bg-size/2;
+
+	$max-width: 620px;
+
+	.paragraph {
+		display: block;
+		padding-inline: 1rem;
+		margin-block: 1rem;
+		text-align: center;
+		line-height: 180%;
+		max-width: $max-width;
+		margin-inline: auto;
+		p {
+			margin-block: 1rem;
+		}
+
+		@include breakpoint-up(medium) {
+			font-size: 20px;
+		}
+
+		span,
+		a {
+			white-space: nowrap;
+			background-color: $dark-green;
+			color: $white;
+			padding-inline: 0.5rem;
+			padding-block: 0.5rem;
+			border-radius: 50000px;
+			font-size: 90%;
+		}
+	}
+
+	.profile_pic {
+		display: block;
+		margin-inline: auto;
+		$size: 130px;
+		height: $size;
+		width: $size;
+		position: relative;
+		overflow: hidden;
+		border-radius: 50%;
+		border: 5px solid $dark-green;
+		img {
+			width: 180px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			translate: -50% -50%;
+		}
+	}
+
+	.links {
+		margin-inline: auto;
+		width: clamp(1px, 100%, $max-width);
+		padding-block: 2rem;
+		display: flex;
+		justify-content: space-evenly;
+		.link {
+			display: block;
+			$size: 70px;
+			height: $size;
+			width: $size;
+			display: grid;
+			place-items: center;
+			border: 3px solid $dark-green;
+			border-radius: 50%;
+
+			i {
+				font-size: 40px;
+				color: $dark-green;
+			}
+
+			&:hover,
+			&:active {
+				background-color: $dark-green;
+				i {
+					color: $white;
+				}
+			}
+		}
+	}
 }

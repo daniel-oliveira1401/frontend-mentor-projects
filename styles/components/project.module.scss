@@ -106,8 +106,11 @@
 		background-color: $white;
 		position: absolute;
 		inset: 0;
-		display: none;
+		display: grid;
+		transition: all 100ms ease-in-out;
 		place-items: center;
+		opacity: 0;
+		pointer-events: none;
 		.spinner {
 			$size: 40px;
 			height: $size;

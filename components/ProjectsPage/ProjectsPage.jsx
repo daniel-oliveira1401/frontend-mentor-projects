@@ -1,5 +1,6 @@
 import styles from "../../styles/components/projects-page.module.scss";
 import Link from "next/link";
+import Head from "next/head";
 
 export default function ProjectsPage(props) {
 	// console.log("data:", props);
@@ -34,6 +35,9 @@ export default function ProjectsPage(props) {
 
 	return (
 		<section data-projects className={styles.projects}>
+			<Head>
+				<title>Projects</title>
+			</Head>
 			{projectsCards}
 		</section>
 	);

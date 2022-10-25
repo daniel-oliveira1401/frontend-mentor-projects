@@ -4,6 +4,7 @@ import RightArrowIcon from "../../public/arrow_right.svg";
 import { useEffect } from "react";
 import pagesData from "../../pages-data.json";
 import Link from "next/link";
+import Head from "next/head";
 
 export default function ProjectPage(props) {
 	useEffect(() => {
@@ -23,12 +24,12 @@ export default function ProjectPage(props) {
 
 	function showOverlay() {
 		let overlay = document.querySelector("[data-project-overlay]");
-		overlay.style.display = "grid";
+		overlay.style.opacity = "1";
 	}
 
 	function hideOverlay() {
 		let overlay = document.querySelector("[data-project-overlay]");
-		overlay.style.display = "none";
+		overlay.style.opacity = "0";
 	}
 
 	let paths = getProjectsPaths();
@@ -46,6 +47,14 @@ export default function ProjectPage(props) {
 	return (
 		// <div>this is the project: {props.project.name} (under construction 👷‍♂️)</div>
 		<section className={s.project}>
+			<Head>
+				<meta
+					property="og:image"
+					content={`/projects/previews/preview-${props.project.path}.jpg`}
+				/>
+				<meta property="og:description" content={props.project.description} />
+				<title>{props.project.name}</title>
+			</Head>
 			<header className={s.project__header}>
 				<Link href={paths[prevIndex]}>
 					<div

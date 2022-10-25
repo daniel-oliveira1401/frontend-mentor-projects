@@ -1,43 +1,43 @@
 [
 	{
 		"name": "Home",
-		"description": "placeholder description here.",
+		"description": "Home page",
 		"path": "home",
 		"isProject": false
 	},
 	{
 		"name": "Projects",
-		"description": "placeholder description here.",
+		"description": "A list of all the Frontend Mentor projects that I have finished so far.",
 		"path": "projects",
 		"isProject": false
 	},
 	{
 		"name": "Advice Generator App",
-		"description": "placeholder description here.",
+		"description": "Click the dice, get an advice.",
 		"path": "advice-generator-app",
 		"isProject": true
 	},
 	{
 		"name": "Interactive Card Details Form",
-		"description": "placeholder description here.",
+		"description": "This interactive form reflects in the card images the card data entered by the user.",
 		"path": "interactive-card-details-form",
 		"isProject": true
 	},
 	{
 		"name": "Profile Card Component",
-		"description": "placeholder description here.",
+		"description": "A simple profile card component, with the added spice of moving the background while the user hovers/clicks the component.",
 		"path": "profile-card-component",
 		"isProject": true
 	},
 	{
 		"name": "Tip Calculator App",
-		"description": "placeholder description here.",
+		"description": "Calculate how much tip you or your group will give.",
 		"path": "tip-calculator-app",
 		"isProject": true
 	},
 	{
 		"name": "Chat App CSS Illustration",
-		"description": "placeholder description here.",
+		"description": "A chat illustration made with HTML, CSS and JS. Try sending a message.",
 		"path": "chat-app-css-illustration",
 		"isProject": true
 	},

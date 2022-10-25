@@ -19,7 +19,7 @@ export default function ProjectsPage(props) {
 					<div className={styles.projectCard__img}>
 						<img
 							// src={`./projects/previews/${projectData.path}.jpeg`}
-							src={`/projects/previews/test-preview.jpg`}
+							src={`/projects/previews/preview-${projectData.path}.jpg`}
 							alt="Project preview"
 						/>
 					</div>

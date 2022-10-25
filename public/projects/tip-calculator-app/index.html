@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- displays site properly based on user's device -->
+
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="./images/favicon-32x32.png"
+		/>
+
+		<link rel="stylesheet" href="./css/style.css" />
+
+		<!-- google fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- end -->
+
+		<!-- jquery -->
+		<script
+			src="https://code.jquery.com/jquery-3.6.1.min.js"
+			integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+			crossorigin="anonymous"
+		></script>
+		<!-- end -->
+
+		<!-- jquery mask  -->
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"
+			integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+		<!-- end -->
+		<title>Frontend Mentor | Tip calculator app</title>
+		<script src="./index.js" defer></script>
+	</head>
+	<body>
+		<div class="container">
+			<h1 class="title">
+				<span>spli</span>
+				<span>tter</span>
+			</h1>
+
+			<div class="app">
+				<div class="app__panel-input">
+					<div class="bill-input input-group">
+						<label for="bill-amount"
+							>Bill <span class="warning">Can't be zero</span>
+						</label>
+						<div class="input-container">
+							<img src="./images/icon-dollar.svg" alt="" class="symbol" />
+							<input id="bill-amount" placeholder="0" type="text" />
+						</div>
+					</div>
+					<div class="tip-selector input-group">
+						<h3 class="header">Select Tip %</h3>
+						<div class="options">
+							<div data-percent="5" class="tip-value">5%</div>
+							<div data-percent="10" class="tip-value">10%</div>
+							<div data-percent="15" class="tip-value">15%</div>
+							<div data-percent="25" class="tip-value">25%</div>
+							<div data-percent="50" class="tip-value">50%</div>
+							<div data-custom="true" class="tip-value">
+								<input
+									inputmode="numeric"
+									id="custom-percent"
+									placeholder=" Custom"
+									type="number"
+								/>
+								<div class="warning">Can't be negative</div>
+							</div>
+						</div>
+					</div>
+					<div class="people-input input-group">
+						<label for="numPeople"
+							>Number of People
+							<span class="warning">Can't be zero</span></label
+						>
+						<div class="input-container">
+							<img src="./images/icon-person.svg" class="symbol" />
+							<input
+								pattern="^[0-9]*$"
+								type="text"
+								placeholder="1"
+								id="num-people"
+							/>
+						</div>
+					</div>
+				</div>
+				<div class="app__panel-result">
+					<div class="tip-amount">
+						<div class="text">
+							<div class="primary">Tip Amount</div>
+							<div class="secondary">/person</div>
+						</div>
+						<div class="value">
+							<span class="symbol">$</span>
+
+							<div id="tip-per-person" class="number">$0.00</div>
+						</div>
+					</div>
+					<div class="total">
+						<div class="text">
+							<div class="primary">Total</div>
+							<div class="secondary">/person</div>
+						</div>
+						<div class="value">
+							<span class="symbol">$</span>
+							<div id="total-per-person" class="number">0.00</div>
+						</div>
+					</div>
+					<button disabled="true" id="btn-reset">Reset</button>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

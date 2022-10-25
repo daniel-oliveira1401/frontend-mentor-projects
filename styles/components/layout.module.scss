@@ -56,17 +56,6 @@
 	}
 
 	&[data-current-page="projects"] {
-		.layout__content {
-			overflow: visible;
-		}
-		.layout__content > section {
-			overflow: visible;
-
-			margin-top: -$nav-bg-size/3;
-			@include breakpoint-up(medium) {
-				margin-top: -$nav-bg-size-desktop/3;
-			}
-		}
 		.bg_circle {
 			$size: $bg-circle-sm;
 			$size-desktop: $bg-circle-lg;
@@ -100,9 +89,9 @@
 		isolation: isolate;
 		display: flex;
 		justify-content: center;
-		margin-bottom: $nav-bg-size/3;
+		// margin-bottom: $nav-bg-size/3;
 		@include breakpoint-up(medium) {
-			margin-bottom: $nav-bg-size-desktop/3;
+			// margin-bottom: $nav-bg-size-desktop/3;
 		}
 	}
 
@@ -250,16 +239,6 @@
 				right: -$size-desktop * 0.95;
 			}
 		}
-	}
-}
-
-@keyframes spin {
-	from {
-		rotate: 0deg;
-	}
-
-	to {
-		rotate: 360deg;
 	}
 }
 

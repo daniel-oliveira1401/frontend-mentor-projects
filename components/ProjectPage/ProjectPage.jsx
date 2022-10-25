@@ -8,6 +8,7 @@ import Link from "next/link";
 export default function ProjectPage(props) {
 	useEffect(() => {
 		console.log("loaded");
+		// hideOverlay();
 	}, [props]);
 
 	function getProjectsPaths() {
@@ -18,6 +19,16 @@ export default function ProjectPage(props) {
 		});
 
 		return p;
+	}
+
+	function showOverlay() {
+		let overlay = document.querySelector("[data-project-overlay]");
+		overlay.style.display = "grid";
+	}
+
+	function hideOverlay() {
+		let overlay = document.querySelector("[data-project-overlay]");
+		overlay.style.display = "none";
 	}
 
 	let paths = getProjectsPaths();
@@ -39,15 +50,26 @@ export default function ProjectPage(props) {
 				<Link href={paths[prevIndex]}>
 					<div
 						data-disabled={(!prevIndexIsValid).toString()}
-						onClick={(e) => {}}
+						onClick={(e) => {
+							showOverlay();
+						}}
 						className={s.nav_arrow__left}
 					>
 						<LeftArrowIcon></LeftArrowIcon>
 					</div>
 				</Link>
-				<h1 className={s.project__name}>{props.project.name}</h1>
+				<h1 className={s.project__name}>
+					{props.project.name}
+					<span tabIndex={0} class="material-symbols-outlined">
+						help
+					</span>
+					<div className={s.project__tooltip}>{props.project.description}</div>
+				</h1>
 				<Link href={paths[nextIndex]}>
 					<div
+						onClick={() => {
+							showOverlay();
+						}}
 						data-disabled={(!nextIndexIsValid).toString()}
 						className={s.nav_arrow__right}
 					>
@@ -56,8 +78,15 @@ export default function ProjectPage(props) {
 				</Link>
 			</header>
 			<main className={s.project__container}>
-				<div className={s.project__overlay}>Under construction 👷‍♂️</div>
-				<iframe src=""></iframe>
+				<div data-project-overlay className={s.project__overlay}>
+					<div className={s.spinner}></div>
+				</div>
+				<iframe
+					onLoad={() => {
+						hideOverlay();
+					}}
+					src={`/projects/${props.project.path}/index.html`}
+				></iframe>
 			</main>
 		</section>
 	);

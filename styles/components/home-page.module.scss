@@ -2,6 +2,10 @@
 @import "../globals/variables";
 
 .home {
+	$nav-bg-size: 80px;
+	$nav-bg-size-desktop: 100px;
+
+	padding-top: $nav-bg-size/3;
 	display: flex;
 	flex-direction: column;
 	flex-grow: 1;

@@ -70,7 +70,7 @@ export default function ProjectPage(props) {
 				</Link>
 				<h1 className={s.project__name}>
 					{props.project.name}
-					<span tabIndex={0} class="material-symbols-outlined">
+					<span tabIndex={0} className="material-symbols-outlined">
 						help
 					</span>
 					<div className={s.project__tooltip}>{props.project.description}</div>

@@ -2,6 +2,7 @@
 @import "../globals/utilities";
 
 .layout {
+	background-color: $white;
 	$nav-item-width: 60px;
 	$nav-bg-size: 80px;
 	$nav-item-gap: $nav-bg-size/2;
@@ -147,7 +148,8 @@
 			background-color: $dark-green;
 
 			top: 50%;
-			translate: 0 -50%;
+			transform: translateY(-50%);
+			// translate: 0 -50%;
 			z-index: -1;
 			transition: left 400ms cubic-bezier(0.86, 0, 0.07, 1);
 
@@ -185,7 +187,8 @@
 			position: absolute;
 			top: 50vh;
 			left: 50%;
-			translate: -50% -50%;
+			transform: translateX(-50%) translateY(-50%);
+			// translate: -50% -50%;
 			$size: 40px;
 			height: $size;
 			width: $size;

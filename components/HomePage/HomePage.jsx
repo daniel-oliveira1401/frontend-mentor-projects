@@ -29,7 +29,7 @@ export default function HomePage() {
 			</section>
 			<div className={styles.home__cta}>
 				<Link href="/projects">
-					<button>Check them out</button>
+					<button tabIndex={0}>Check them out</button>
 				</Link>
 			</div>
 		</div>

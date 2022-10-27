@@ -86,7 +86,11 @@
 				border-radius: 50%;
 			}
 
-			&:hover {
+			&:hover,
+			&:active,
+			&:focus {
+				background-color: $dark-green;
+				color: $white;
 				&::before {
 					bottom: calc(100% - $bg-size/2);
 				}
@@ -94,11 +98,6 @@
 				&::after {
 					left: calc(100% - $bg-size/2);
 				}
-			}
-
-			&:active {
-				background-color: $dark-green;
-				color: $white;
 			}
 		}
 
